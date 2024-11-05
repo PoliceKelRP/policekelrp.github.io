@@ -26,7 +26,7 @@ closeModal.addEventListener('click', function() {
 submitPassword.addEventListener('click', function() {
     const enteredPassword = passwordInput.value;
     if (enteredPassword === correctPassword) {
-        window.location.href = 'categorie4.html'; // Rediriger vers la page protégée
+        window.location.href = 'espace_professionnel.html'; // Rediriger vers la page protégée
     } else {
         errorMsg.classList.remove('hidden'); // Afficher le message d'erreur
     }
