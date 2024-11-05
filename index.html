@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de la Police Nationale de KelRP</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/Logo%20PN-fon%20dtransparent.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+    <header>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/Logo%20PN-fon%20dtransparent.png" alt="Logo" class="logo">
+        <h1 style="color:rgb(255, 255, 255);">Bienvenue sur le site de la police nationale de KelRP</h1>
+        <nav>
+<br>      
+            <ul>
+                <li><a href="nous_decouvrir.html">Nous découvrir</a></li>
+                <li><a href="vous_informer.html">Vous informer</a></li>
+                <li><a href="nous_rejoindre.html">Nous rejoindre</a></li>
+                <li><a href="#" id="privateLink">Espace professionnel</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #333;
+      }
+
+      .carousel-container {
+          max-width: 800px; 
+          height: 500px; 
+          margin: 50px auto;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-images {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-images img {
+          width: 100%;
+          height: 130%; 
+          object-fit: cover; 
+          border-radius: 10px;
+      }
+
+      .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 1.5em;
+      }
+
+      .arrow-left {
+          left: 10px;
+      }
+
+      .arrow-right {
+          right: 10px;
+      }
+
+      .dots {
+          text-align: center;
+          margin-top: 5px;
+      }
+
+      .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          cursor: pointer;
+      }
+
+      .active {
+          background-color: #717171;
+      }
+
+      .social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+      }
+
+.social-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s ease;
+      }
+
+.social-icons a:hover {
+    color: #0073e6; /* Couleur au survol */
+      }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel-images">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/Design_sans_titre.jpg" alt="Image 1">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/image1.png" alt="Image 2">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/image-20.png" alt="Image 3">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/image.png" alt="Image 4">
+  </div>
+
+  <button class="arrow arrow-left">&#10094;</button>
+  <button class="arrow arrow-right">&#10095;</button>
+
+  <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+  </div>
+</div>
+
+<script>
+  const carouselImages = document.querySelector('.carousel-images');
+  const images = document.querySelectorAll('.carousel-images img');
+  const dots = document.querySelectorAll('.dot');
+  const arrowLeft = document.querySelector('.arrow-left');
+  const arrowRight = document.querySelector('.arrow-right');
+  let index = 0;
+
+  function updateCarousel() {
+      carouselImages.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+  }
+
+  function nextImage() {
+      index = (index + 1) % images.length;
+      updateCarousel();
+  }
+
+  function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      updateCarousel();
+  }
+
+  arrowRight.addEventListener('click', nextImage);
+  arrowLeft.addEventListener('click', prevImage);
+
+  dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => {
+          index = dotIndex;
+          updateCarousel();
+      });
+  });
+
+  dots[0].classList.add('active');
+  </script>
+
+<h1 style="font-family: 'Georgia'; color: rgb(255, 255, 255); text-align: center;">Suivez-nous sur les réseaux sociaux</h1>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/krp_officiel/?igsh=MXV4NXZ2b3Frbm9sZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitch.tv/kelrasoftv" target="_blank"><i class="fab fa-twitch"></i></a>
+    </div>
+</body>
+
+<div class="social-icons">
+    <a href="https://www.instagram.com/krp_officiel/?igsh=MXV4NXZ2b3Frbm9sZg%3D%3D" target="_blank">
+        <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/instagram.png" alt="Instagram" width="25" height="25">
+    </a>
+    <a href="https://www.twitch.tv/kelrasoftv" target="_blank">
+        <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/twitch.png" alt="LinkedIn" width="32" height="32">
+    </a>
+</div>
+
+    <!-- Fenêtre modale pour le mot de passe -->
+    <div id="passwordModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Accès réservé</h2>
+            <p>Veuillez entrer le mot de passe :</p>
+            <input type="password" id="passwordInput" placeholder="Mot de passe">
+            <button id="submitPassword">Valider</button>
+            <p id="errorMsg" class="hidden">Mot de passe incorrect !</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
