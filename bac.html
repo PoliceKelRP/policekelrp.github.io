@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de la Police Nationale de KelRP</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/Logo%20PN-fon%20dtransparent.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+    <header>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/970f467e8033b0f526c80c1f2c1ab8213929e279/Photo%20bac/Embl%C3%A8me_de_la_Brigade_anti-criminalit%C3%A9_(BAC).svg" alt="Logo" class="logo" style="width: 100px; height: auto;">
+        <h1 style="color:rgb(255, 255, 255);">Brigade anti-criminalité</h1>
+    </header>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #333;
+      }
+
+      .carousel-container {
+          max-width: 800px; 
+          height: 500px; 
+          margin: 50px auto;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-images {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-images img {
+          width: 100%;
+          height: 130%; 
+          object-fit: cover; 
+          border-radius: 10px;
+      }
+
+      .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 1.5em;
+      }
+
+      .arrow-left {
+          left: 10px;
+      }
+
+      .arrow-right {
+          right: 10px;
+      }
+
+      .dots {
+          text-align: center;
+          margin-top: 5px;
+      }
+
+      .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          cursor: pointer;
+      }
+
+      .active {
+          background-color: #717171;
+      }
+
+      .social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+      }
+
+.social-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s ease;
+      }
+
+.social-icons a:hover {
+    color: #0073e6; /* Couleur au survol */
+      }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel-images">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/1.webp" alt="Image 1">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/2.webp" alt="Image 2">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/3.webp" alt="Image 3">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/4.webp" alt="Image 4">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/5.webp" alt="Image 5">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/6.webp" alt="Image 6">
+      <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20bac/7.webp" alt="Image 7">
+  </div>
+
+  <button class="arrow arrow-left">&#10094;</button>
+  <button class="arrow arrow-right">&#10095;</button>
+
+  <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+  </div>
+</div>
+
+<script>
+  const carouselImages = document.querySelector('.carousel-images');
+  const images = document.querySelectorAll('.carousel-images img');
+  const dots = document.querySelectorAll('.dot');
+  const arrowLeft = document.querySelector('.arrow-left');
+  const arrowRight = document.querySelector('.arrow-right');
+  let index = 0;
+
+  function updateCarousel() {
+      carouselImages.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+  }
+
+  function nextImage() {
+      index = (index + 1) % images.length;
+      updateCarousel();
+  }
+
+  function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      updateCarousel();
+  }
+
+  arrowRight.addEventListener('click', nextImage);
+  arrowLeft.addEventListener('click', prevImage);
+
+  dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => {
+          index = dotIndex;
+          updateCarousel();
+      });
+  });
+
+
+  dots[0].classList.add('active');
+  </script>
+
+<style>
+    body {
+        background-color: #333;
+        font-family: 'Arial', sans-serif;
+        color: #fff;
+        padding: 20px;
+        margin: 0;
+    }
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin: 10px 0;
+    }
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    h4 {
+        font-size: 1.5em;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 1em;
+        color: #ddd;
+        margin-bottom: 15px;
+    }
+    .link-container, .button-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .link-container a, .return-button {
+        display: inline-block;
+        background-color: rgb(109, 108, 107);
+        color: antiquewhite;
+        font-size: 18px;
+        padding: 15px 25px;
+        margin: 10px 0;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .link-container a:hover, .return-button:hover {
+        background-color: rgb(109, 108, 107);
+        transform: scale(1.05);
+    }
+    .return-button {
+        background-color: rgb(109, 108, 107);
+    }
+    .return-button:hover {
+        background-color: rgb(85, 84, 83);
+    }
+    .video-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        text-align: center;
+    }
+    .video-container a {
+        display: inline-block;
+        background-color: rgb(109, 108, 107);
+        color: #ecf0f1;
+        font-size: 1.2em;
+        padding: 15px 25px;
+        margin-top: 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .video-container a:hover {
+        background-color: rgb(109, 108, 107);
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="content">
+    <h4>Intégrer la Brigade anti-criminalité :</h4>
+    <p>Être Gardien de la Paix titulaire minimum ;</p>
+    <p>Être Officier de police judiciaire ;</p>
+    <p>Avoir un dossier irréprochable au moment de la candidature ;</p>
+</div>
+
+<div class="content">
+    <h4>Intégrer la Brigade anti-criminalité en tant que stagiaire :</h4>
+    <p>Être Gardien de la Paix stagiaire minimum ;</p>
+    <p>Être Agent de police judiciaire ;</p>
+    <p>Avoir un dossier irréprochable au moment de la candidature ;</p>
+    <p>Il vous sera demandé de passer un examen sportif pour pouvoir être intégré le stage au sein de la Brigade. La moyenne sera exigée.</p>
+    <p>Le stage vous permettra de sortir en vacation avec l'équipage BAC75N, lors d'après-midi pour une durée déterminée. Le stage aura pour durée 1 semaine maximum afin de vous permettre de découvrir la spécificité de l'unité.</p>
+    <p>Ce stage sera pris en compte lors de la candidature au sein de la Brigade vous permettant de valider certains modules de la sélection.</p>
+</div>
+
+<div class="content">
+    <h4>Les sous-spécialités au sein de la BAC regroupent : </h4>
+    <p>Le recrutement et la formation des agents, dont le maintien en condition opérationnelle ;</p>
+    <p>Le pôle judiciaire en charge des enquêtes de la Police Nationale.</p>
+</div>
+
+<div class="content link-container">
+    <a href="https://discord.com/channels/1050199478038175744/1252941125854171277">Recrutement personnel Brigade anti-criminalité - KRP</a>
+</div>
+
+<a style="
+            color: white; 
+            background-color: rgb(109, 108, 107); 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            font-weight: bold;
+        " 
+        href="index.html" 
+        onmouseover="this.style.backgroundColor='rgb(85, 84, 83)'; this.style.transform='scale(1.05)';" 
+        onmouseout="this.style.backgroundColor='rgb(109, 108, 107)'; this.style.transform='scale(1)';">
+            Retour à l'accueil
+        </a>
+    </header>
+
+    <a style="
+            color: white; 
+            background-color: rgb(109, 108, 107); 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            font-weight: bold;
+        " 
+        href="espace_professionnel.html" 
+        onmouseover="this.style.backgroundColor='rgb(85, 84, 83)'; this.style.transform='scale(1.05)';" 
+        onmouseout="this.style.backgroundColor='rgb(109, 108, 107)'; this.style.transform='scale(1)';">
+            Retour à l'espace professionnel
+        </a>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
