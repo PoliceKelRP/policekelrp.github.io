@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de la Police Nationale de KelRP</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/image%20acceuil%20site%20police/Logo%20PN-fon%20dtransparent.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/PoliceKelRP/policekelrp.github.io/refs/heads/main/Photo%20academie%20de%20police/logo%20academie%20de%20police.png" alt="Logo" class="logo" style="width: 100px; height: auto;">
+            <h1 style="color:rgb(255, 255, 255);">Habilitation Armement</h1>
+        </div>
+    </header>
+
+    <!-- Menu avec style de boutons -->
+    <ul class="nav-menu">
+        <li><a href="sig.html" class="nav-button">SIG SAUER SP 2022</a></li>
+        <li><a href="ump9.html" class="nav-button">HK-UMP9</a></li>
+        <li><a href="taser.html" class="nav-button">PIE</a></li>
+        <li><a href="lbd.html" class="nav-button">LBD-40</a></li>
+        <li><a href="g36c.html" class="nav-button">HK-G36C</a></li>
+    </ul>
+
+    <!-- Carrousel d'images -->
+    <div class="carousel-container">
+        <div class="carousel-images">
+            <img src="" alt="Image 1">
+        </div>
+
+        <button class="arrow arrow-left">&#10094;</button>
+        <button class="arrow arrow-right">&#10095;</button>
+
+        <div class="dots">
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Boutons de retour -->
+    <a class="return-button" href="index.html">Retour à l'accueil</a>
+    <a class="return-button" href="espace_professionnel.html">Retour à l'espace professionnel</a>
+
+    <!-- Styles -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        /* Menu de navigation */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            margin-top: 20px;
+        }
+        .nav-button {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .nav-button:hover {
+            background-color: #0073e6;
+            transform: scale(1.05);
+        }
+
+        /* Carrousel */
+        .carousel-container {
+            max-width: 800px;
+            height: 500px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5em;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+        .dots {
+            text-align: center;
+            margin-top: 5px;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .active {
+            background-color: #717171;
+        }
+
+        /* Contenu principal */
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Boutons de retour */
+        .return-button {
+            display: inline-block;
+            background-color: rgb(109, 108, 107);
+            color: antiquewhite;
+            font-size: 18px;
+            padding: 15px 25px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .return-button:hover {
+            background-color: rgb(85, 84, 83);
+            transform: scale(1.05);
+        }
+    </style>
+
+    <!-- Script du carrousel -->
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const dots = document.querySelectorAll('.dot');
+        const arrowLeft = document.querySelector('.arrow-left');
+        const arrowRight = document.querySelector('.arrow-right');
+        let index = 0;
+
+        function updateCarousel() {
+            carouselImages.style.transform = `translateX(${-index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            updateCarousel();
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+
+        arrowLeft.addEventListener('click', prevImage);
+        arrowRight.addEventListener('click', nextImage);
+        dots.forEach((dot, i) => dot.addEventListener('click', () => { index = i; updateCarousel(); }));
+    </script>
+</body>
+</html>
