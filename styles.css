@@ -67,3 +67,64 @@ main {
     color: #ffffff;
     margin-top: 10px;
 }
+/* Style général pour les écrans larges (PC) */
+body {
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+/* Pour les écrans étroits (téléphones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .menu {
+    display: none; /* Exemple de simplification */
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 calc(33.333% - 20px); /* Trois colonnes sur grand écran */
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex: 1 1 calc(50% - 20px); /* Deux colonnes sur tablette */
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    flex: 1 1 100%; /* Une colonne sur téléphone */
+  }
+}
+.container {
+  width: 800px;
+}
+.container {
+  width: 90%; /* Flexible */
+  max-width: 1200px; /* Limite sur écran large */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
