@@ -1,5 +1,5 @@
 // Mot de passe correct
-const correctPassword = "password";
+const correctPassword = "75N008";
 
 // Récupération des éléments
 const privateLink = document.getElementById('privateLink');
