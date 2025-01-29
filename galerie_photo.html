@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Photos</title>
+    <style>
+        /* Réinitialiser le margin et padding par défaut */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        /* Styles pour les titres */
+        .title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #333;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grille responsive */
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fixer la taille des images */
+        .gallery-item img {
+            width: 100%;
+            height: 200px; /* Hauteur fixe */
+            object-fit: cover; /* Garder l'aspect et couper si nécessaire */
+        }
+
+        .gallery-item p {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Styles pour la vidéo */
+        .video-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px; /* Taille maximale */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .gallery-item p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Galerie Photos</h1>
+    </header>
+
+    <!-- Titre après la galerie -->
+    <div class="title">Police Nationale</div>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/1w6vwlNe8oG8.webp" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/Capture_decran_2024-11-18_213658.png" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/Capture_decran_2024-12-09_162055.png" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/Capture_decran_2024-12-09_171640.png" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/Capture_decran_2024-12-18_174943.png" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/Design_sans_titre.jpg" alt="Photo 6">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/image.png" alt="Photo 7">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo pn/image1.png" alt="Photo 8">
+        </div>
+    </section>
+
+    <!-- Titre après la galerie -->
+    <div class="title">BAC</div>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/Capture_decran_2025-01-06_202830.png" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/Capture_decran_2025-01-09_221205.png" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/Capture_decran_2025-01-18_010754.png" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/Capture_decran_2025-01-18_011534.png" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/Capture_decran_2025-01-29_011544.png" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/image.png" alt="Photo 6">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/image1.png" alt="Photo 7">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo bac/image2.png" alt="Photo 8">
+        </div>
+    </section>
+
+    <!-- Titre après la galerie -->
+    <div class="title">CRS</div>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/Capture_decran_2024-10-25_225601.png" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/Capture_decran_2024-12-31_000655.png" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/Capture_decran_2025-01-19_214733.png" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/image.png" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/image1.png" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/image2.png" alt="Photo 6">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/image3.png" alt="Photo 7">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo crs/image4.png" alt="Photo 8">
+        </div>
+    </section>
+
+    <!-- Titre après la galerie -->
+    <div class="title">RAID</div>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/Capture_decran_2024-12-07_231000.png" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/Capture_decran_2025-01-15_013953.png" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/Capture_decran_2025-01-15_014222.png" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/Capture_decran_2025-01-15_015154.png" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/image.png" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/image1.png" alt="Photo 6">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/image2.png" alt="Photo 7">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo raid/image3.png" alt="Photo 8">
+        </div>
+    </section>
+
+    <!-- Titre avant la galerie -->
+    <div class="title">Maintien d'ordre et rétablissement d'ordre</div>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo mo:ro/Capture_decran_2025-01-29_015456.png" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="file:///Users/lukluk/Documents/photo mo:ro/Capture_decran_2025-01-29_020441.png" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="file:///Users/lukluk/Documents/photo mo:ro/Capture_decran_2025-01-29_020815.png" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="file:///Users/lukluk/Documents/photo mo:ro/Capture_decran_2025-01-29_021033.png" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="file:///Users/lukluk/Documents/photo mo:ro/Capture_decran_2025-01-29_021240.png" alt="Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="file:///Users/lukluk/Documents/photo mo:ro/Capture_decran_2025-01-29_022336.png" alt="Photo 6">
+        </div>
+        <div class="gallery-item">
+            <img src="file:///Users/lukluk/Documents/photo mo:ro/image.png" alt="Photo 7">
+        </div>
+        <div class="gallery-item">
+            <img src="/Users/lukluk/Documents/photo mo:ro/image1.png" alt="Photo 8">
+        </div>
+    </section>
+
+</body>
+</html>
